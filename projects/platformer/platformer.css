@@ -4,8 +4,10 @@ body {
 
 canvas {
   background-color: lightgray;
+  background-image: url("https://wallpapercave.com/wp/wp2195544.png");
 }
 
 img {
   display: none;
 }
+
