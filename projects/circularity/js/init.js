@@ -23,10 +23,13 @@ var init = function (window) {
         var circle;
         var circles = [];
         // TODO 2 : Create a function that draws a circle 
-        circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
-        physikz.addRandomVelocity(circle, canvas);
-        view.addChild(circle);
-        circles.push(circle);
+
+        function drawCircle(){
+            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
+            physikz.addRandomVelocity(circle, canvas);
+            view.addChild(circle);
+            circles.push(circle);
+        }
 
 
         // TODO 3 / 7 : Call the drawCircle() function 
@@ -47,14 +50,19 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-            physikz.updatePosition(/* Your Bracket Notation HERE */);
-            physikz.updatePosition(/* Your Bracket Notation HERE */);
-            physikz.updatePosition(/* Your Bracket Notation HERE */);
-            physikz.updatePosition(/* Your Bracket Notation HERE */);
-            physikz.updatePosition(/* Your Bracket Notation HERE */);
+            physikz.updatePosition(circles[0]);
+            physikz.updatePosition(circles[1]);
+            physikz.updatePosition(circles[2]);
+            physikz.updatePosition(circles[3]);
+            physikz.updatePosition(circles[4]);
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-           
+            game.checkCirclePosition(circles[0]);
+            game.checkCirclePosition(circles[1]);
+            game.checkCirclePosition(circles[2]); 
+            game.checkCirclePosition(circles[3]);
+            game.checkCirclePosition(circles[4]);
+    
 
             // TODO 9 : Iterate over the array
            
@@ -74,7 +82,7 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            
+        
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
